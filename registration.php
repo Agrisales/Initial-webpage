@@ -3,7 +3,7 @@
 session_start();
 
 
-$con = mysqli_connect('localhost', 'root','123456');
+$con = mysqli_connect('localhost', 'root','');
 
 mysqli_select_db($con, 'userregistration');
 
@@ -19,7 +19,8 @@ $num = mysql_num_rows($result);
 if($sum == 1){
 	echo "email Already Taken";
 }else{
-	$reg =" insert into usertable(email, password)" values ('$emai' , '$pass')";
+	$reg =" insert into usertable(email, password)" values ('$email' , '$pass')";
 	mysqli_query($con, $reg);
 	echo"Registration Successful";
+}
 ?>
